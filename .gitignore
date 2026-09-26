@@ -1,0 +1,6 @@
+# Source screenshots stay on Synology Drive only — the repo is public.
+data/
+.claude/settings.local.json
+Thumbs.db
+desktop.ini
+.DS_Store
