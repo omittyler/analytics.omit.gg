@@ -91,7 +91,21 @@ window.OMIT_METRICS = {
         }
       }
     },
-    { id: "x-omitnoir", platform: "x", name: "@OMiTNoir", months: {} },
+    {
+      id: "x-omitnoir",
+      platform: "x",
+      name: "@OMiTNoir",
+      months: {
+        "2026-01": { impressions: 236524, engagementRate: 2.09, engagements: 4900, profileVisits: 2600, replies: 74, likes: 1900, reposts: 135, bookmarks: 79, shares: 27, followers: 541, verifiedFollowers: 64 },
+        "2026-02": { impressions: 32903, engagementRate: 1.64, engagements: 538, profileVisits: 501, replies: 1, likes: 33, reposts: 0, bookmarks: 2, shares: 1, followers: 541, verifiedFollowers: 64 },
+        "2026-03": { impressions: 15508, engagementRate: 1.24, engagements: 193, profileVisits: 183, replies: 0, likes: 9, reposts: 0, bookmarks: 1, shares: 0, followers: 541, verifiedFollowers: 64 },
+        "2026-04": { impressions: 205700, engagementRate: 1.19, engagements: 2400, profileVisits: 1500, replies: 40, likes: 792, reposts: 75, bookmarks: 27, shares: 11, followers: 541, verifiedFollowers: 64 },
+        "2026-05": { impressions: 57867, engagementRate: 1.57, engagements: 906, profileVisits: 613, replies: 8, likes: 247, reposts: 28, bookmarks: 9, shares: 1, followers: 541, verifiedFollowers: 64 },
+        "2026-06": { impressions: 8721, engagementRate: 0.78, engagements: 68, profileVisits: 46, replies: 1, likes: 21, reposts: 0, bookmarks: 0, shares: 0, followers: 541, verifiedFollowers: 64 },
+        "2026-07": { impressions: 3960, engagementRate: 0.38, engagements: 15, profileVisits: 13, replies: 0, likes: 2, reposts: 0, bookmarks: 0, shares: 0, followers: 541, verifiedFollowers: 64 },
+        "2026-08": { impressions: 1211, engagementRate: 0.33, engagements: 4, profileVisits: 4, replies: 0, likes: 0, reposts: 0, bookmarks: 0, shares: 0, followers: 541, verifiedFollowers: 64 }
+      }
+    },
     {
       id: "x-affiliates",
       platform: "x",
