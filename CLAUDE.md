@@ -22,6 +22,7 @@ When asked to add a month (e.g. "add September"):
    - X: prefer the exact impressions / engagement rate from the chart tooltip over the rounded tile values (e.g. `557,631` not `557.6K`). Other tiles are abbreviated (`11K` → `11000`). Followers come from the "/ 8.4K" next to Verified followers.
    - X affiliates ("Organic Analytics"): impressions, engagementRate, newFollows, replies, likes, reposts. Update `affiliateCount` if the "N affiliates" chip changes. Screenshots must have "Include organization" OFF (creators & players only). It's `group: "affiliates"` and shown in its own section, separate from org channel totals.
    - Instagram / TikTok: `Total Followers` → `followers`, the `+56` beside it → `followerChange`. TikTok `Video Views` → `views`. Watch time is minutes, avg watch time is seconds.
+   - YouTube (Studio advanced-mode totals row): Views → `views`, Watch time (hours) → `watchTimeHours`, Subscribers → `subscribersGained` (net change that month, not the total), Videos published → `posts` ("—" = 0), Likes, Comments added → `comments`, Shares, Thumbnail CTR → `ctr`.
    - Leave out any metric the screenshot doesn't show; don't record 0 for missing data. Real zeros (no posts that month) are recorded as 0.
 3. If `data/<year>/Year To Date/` screenshots were refreshed, update each channel's `period` (and `asOf`). Use `videoLabel` / `audienceLabel` when a block covers a different range than `period.label`.
 4. Set `updated` at the top of `metrics.js` to today's date.

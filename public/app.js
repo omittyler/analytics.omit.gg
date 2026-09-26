@@ -25,9 +25,9 @@
     },
     youtube: {
       label: "YouTube", color: "--series-youtube", headline: "views",
-      tiles: ["followers", "views", "watchTimeMin", "posts", "likes", "comments"],
-      chart: ["views", "watchTimeMin", "followers"],
-      labels: { followers: "Subscribers" }
+      tiles: ["views", "watchTimeHours", "subscribersGained", "posts", "likes", "comments", "shares", "ctr"],
+      chart: ["views", "watchTimeHours", "subscribersGained", "posts", "likes"],
+      labels: { posts: "Videos published" }
     }
   };
 
@@ -52,7 +52,10 @@
     followsFromPosts: { label: "Follows from posts" },
     newFollows: { label: "New follows" },
     watchTimeMin: { label: "Watch time", fmt: "min" },
-    avgWatchTimeSec: { label: "Avg. watch time", fmt: "sec" }
+    avgWatchTimeSec: { label: "Avg. watch time", fmt: "sec" },
+    watchTimeHours: { label: "Watch time", fmt: "hrs" },
+    subscribersGained: { label: "Subscribers gained" },
+    ctr: { label: "Thumbnail CTR", fmt: "pct" }
   };
 
   // X affiliate program (creators & players with an OMiT badge). Shown in its own
@@ -102,6 +105,7 @@
     if (v == null) return "—";
     if (fmt === "pct") return (Math.round(v * 100) / 100) + "%";
     if (fmt === "min") return compact(v >= 1000 ? v : Math.round(v)) + " min";
+    if (fmt === "hrs") return compact(v >= 1000 ? v : Math.round(v * 10) / 10) + " hrs";
     if (fmt === "sec") return v.toFixed(2) + "s";
     return compact(v);
   }
@@ -110,7 +114,7 @@
     if (fmt === "pct") return v + "%";
     if (fmt === "sec") return v.toFixed(2) + "s";
     var s = v.toLocaleString("en-US", { maximumFractionDigits: 2 });
-    return fmt === "min" ? s + " min" : s;
+    return fmt === "min" ? s + " min" : fmt === "hrs" ? s + " hrs" : s;
   }
 
   // ---- DOM helpers ---------------------------------------------------------
@@ -215,7 +219,7 @@
 
   var POINT_IN_TIME = { followers: true, verifiedFollowers: true };
   // Rates are averaged, weighted by the channel's headline metric (or views).
-  var RATE_WEIGHT = { engagementRate: null, avgWatchTimeSec: "views" };
+  var RATE_WEIGHT = { engagementRate: null, avgWatchTimeSec: "views", ctr: "views" };
 
   function aggregate(c, months) {
     var rows = months.map(function (k) { return c.months[k]; }).filter(Boolean);

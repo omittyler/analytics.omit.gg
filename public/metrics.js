@@ -166,6 +166,22 @@ window.OMIT_METRICS = {
         metrics: { followers: 105900, followerChange: -311, posts: 25, reactions: 10600, comments: 210, engagementRate: 4.83, views: 237500, shares: 713, reach: 198000, watchTimeMin: 48200, avgWatchTimeSec: 10.96 }
       }
     },
-    { id: "youtube", platform: "youtube", name: "YouTube", months: {} }
+    {
+      id: "youtube",
+      platform: "youtube",
+      name: "YouTube",
+      // YouTube Studio monthly totals. subscribersGained is the net change that month
+      // (Studio's "Subscribers" column), not the channel total. Aug views carried a ⚠ in Studio.
+      months: {
+        "2026-01": { views: 1747, watchTimeHours: 11.4, subscribersGained: 4, posts: 0, likes: 33, comments: 0, shares: 1, ctr: 6.4 },
+        "2026-02": { views: 3912, watchTimeHours: 33.1, subscribersGained: 37, posts: 1, likes: 136, comments: 5, shares: 8, ctr: 5.5 },
+        "2026-03": { views: 29602, watchTimeHours: 193.4, subscribersGained: 70, posts: 17, likes: 456, comments: 37, shares: 19, ctr: 4.2 },
+        "2026-04": { views: 60959, watchTimeHours: 254.4, subscribersGained: 81, posts: 28, likes: 1422, comments: 39, shares: 30, ctr: 5.4 },
+        "2026-05": { views: 54303, watchTimeHours: 1151.5, subscribersGained: 440, posts: 29, likes: 1298, comments: 81, shares: 40, ctr: 4.5 },
+        "2026-06": { views: 25609, watchTimeHours: 1230.1, subscribersGained: 124, posts: 10, likes: 740, comments: 39, shares: 15, ctr: 4.9 },
+        "2026-07": { views: 13423, watchTimeHours: 292.5, subscribersGained: 59, posts: 15, likes: 275, comments: 18, shares: 13, ctr: 6.6 },
+        "2026-08": { views: 12484, watchTimeHours: 517.2, subscribersGained: 67, posts: 6, likes: 368, comments: 22, shares: 18, ctr: 4.6 }
+      }
+    }
   ]
 };
