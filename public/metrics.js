@@ -1,6 +1,7 @@
 // OMiT social analytics — transcribed from the screenshots in /data.
 // One entry per channel. `months` is keyed YYYY-MM. `period` holds the
-// longer-range snapshot from /data/Year To Date (label says what range it covers).
+// longer-range snapshot from /data/Year To Date (label says what range it covers);
+// `fromMonths: true` totals that channel's `months` for Year to date instead.
 // Leave a metric out (or null) when the screenshot doesn't show it.
 // See CLAUDE.md for the monthly update procedure.
 
@@ -142,8 +143,7 @@ window.OMIT_METRICS = {
       },
       period: {
         label: "Year to date",
-        asOf: "2026-09-26",
-        metrics: { followers: 30200, followerChange: 83, posts: 50, reactions: 2900, comments: 36, engagementRate: 6.93, views: 77800, shares: 178, saves: 104, followsFromPosts: 75, reach: 47700, watchTimeMin: 3800, avgWatchTimeSec: 8.72 }
+        fromMonths: true
       }
     },
     {
@@ -162,8 +162,7 @@ window.OMIT_METRICS = {
       },
       period: {
         label: "Year to date",
-        asOf: "2026-09-26",
-        metrics: { followers: 105900, followerChange: -311, posts: 25, reactions: 10600, comments: 210, engagementRate: 4.83, views: 237500, shares: 713, reach: 198000, watchTimeMin: 48200, avgWatchTimeSec: 10.96 }
+        fromMonths: true
       }
     },
     {

@@ -655,21 +655,25 @@
     var host = document.getElementById("period");
     clear(host);
     var list = visibleChannels().filter(function (c) { return c.period; });
+    var ytd = resolveRange("ytd");
     document.getElementById("period-title").parentElement.hidden = !list.length;
     list.forEach(function (c) {
       var p = cfg(c);
       var per = c.period;
+      // Year to date totals come from the monthly data; other snapshots are transcribed.
+      var metrics = per.fromMonths ? aggregate(c, ytd.months) : per.metrics;
+      var sub = per.fromMonths ? ytd.title + " · " + ytd.span : per.label + " · as of " + dateLong(per.asOf);
       var card = h("article", { class: "card" }, [
         h("div", { class: "card-head" }, [h("div", null, [
           h("h3", { class: "card-title" }, [swatch(p.color), displayName(c)]),
-          h("p", { class: "card-sub", text: per.label + " · as of " + dateLong(per.asOf) })
+          h("p", { class: "card-sub", text: sub })
         ])])
       ]);
       var tilesEl = h("div", { class: "tiles small" });
       p.tiles.forEach(function (key) {
-        var v = per.metrics && per.metrics[key];
+        var v = metrics && metrics[key];
         if (v == null) return;
-        var d = key === "followers" && per.metrics.followerChange != null ? changeNode(per.metrics.followerChange, "in period") : null;
+        var d = key === "followers" && metrics.followerChange != null ? changeNode(metrics.followerChange, "in period") : null;
         tilesEl.appendChild(tile(metricLabel(c.platform, key), fmtValue(v, METRICS[key].fmt), d));
       });
       if (tilesEl.childNodes.length) card.appendChild(tilesEl);
