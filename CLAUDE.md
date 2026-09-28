@@ -24,7 +24,7 @@ When asked to add a month (e.g. "add September"):
    - Instagram / TikTok: `Total Followers` → `followers`, the `+56` beside it → `followerChange`. TikTok `Video Views` → `views`. Watch time is minutes, avg watch time is seconds.
    - YouTube (Studio advanced-mode totals row): Views → `views`, Watch time (hours) → `watchTimeHours`, Subscribers → `subscribersGained` (net change that month, not the total), Videos published → `posts` ("—" = 0), Likes, Comments added → `comments`, Shares, Thumbnail CTR → `ctr`.
    - Leave out any metric the screenshot doesn't show; don't record 0 for missing data. Real zeros (no posts that month) are recorded as 0.
-3. If `data/<year>/Year To Date/` screenshots were refreshed, update each channel's `period` (and `asOf`). Use `videoLabel` / `audienceLabel` when a block covers a different range than `period.label`.
+3. Year to date totals are calculated from `months`, never transcribed: a channel whose `period` has `fromMonths: true` (Instagram, TikTok) needs nothing here. Only the X `video` / `audience` blocks (and @OMiTBrooklyn's Last 12 months `metrics`) come from `data/<year>/Year To Date/`; if those screenshots were refreshed, update them and `asOf`. Use `videoLabel` / `audienceLabel` when a block covers a different range than `period.label`.
 4. Set `updated` at the top of `metrics.js` to today's date.
 5. A new account (X or otherwise) is a new object in `channels`; a channel with empty `months` stays hidden until its first month is added. A new platform also needs a `PLATFORMS` entry and a `--series-*` color in `styles.css`.
 6. Sanity-check with the deltas printed on the screenshots (e.g. X "↓ -78%"), then preview the site.
