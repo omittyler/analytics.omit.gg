@@ -6,7 +6,7 @@
 // See CLAUDE.md for the monthly update procedure.
 
 window.OMIT_METRICS = {
-  updated: "2026-09-26",
+  updated: "2026-10-04",
   channels: [
     {
       id: "x-omitgg",
@@ -20,7 +20,8 @@ window.OMIT_METRICS = {
         "2026-05": { impressions: 656766, engagementRate: 1.87, engagements: 12300, profileVisits: 4600, replies: 162, likes: 6800, reposts: 330, bookmarks: 238, shares: 91, followers: 14700, verifiedFollowers: 1000 },
         "2026-06": { impressions: 698336, engagementRate: 1.38, engagements: 9600, profileVisits: 3200, replies: 127, likes: 5700, reposts: 262, bookmarks: 158, shares: 52, followers: 14700, verifiedFollowers: 1000 },
         "2026-07": { impressions: 401973, engagementRate: 1.62, engagements: 6400, profileVisits: 2100, replies: 80, likes: 3900, reposts: 281, bookmarks: 63, shares: 35, followers: 14700, verifiedFollowers: 1000 },
-        "2026-08": { impressions: 311038, engagementRate: 0.78, engagements: 2400, profileVisits: 915, replies: 48, likes: 1200, reposts: 115, bookmarks: 67, shares: 15, followers: 14700, verifiedFollowers: 1000 }
+        "2026-08": { impressions: 311038, engagementRate: 0.78, engagements: 2400, profileVisits: 915, replies: 48, likes: 1200, reposts: 115, bookmarks: 67, shares: 15, followers: 14700, verifiedFollowers: 1000 },
+        "2026-09": { impressions: 27465, engagementRate: 1.27, engagements: 348, profileVisits: 99, replies: 8, likes: 221, reposts: 18, bookmarks: 2, shares: 0, followers: 14700, verifiedFollowers: 1000 }
       },
       period: {
         label: "Year to date",
@@ -47,7 +48,8 @@ window.OMIT_METRICS = {
         "2026-05": { impressions: 469542, engagementRate: 1.46, engagements: 6800, profileVisits: 2300, replies: 55, likes: 4100, reposts: 228, bookmarks: 73, shares: 29, followers: 8400, verifiedFollowers: 561 },
         "2026-06": { impressions: 417933, engagementRate: 1.07, engagements: 4400, profileVisits: 906, replies: 49, likes: 3100, reposts: 159, bookmarks: 177, shares: 37, followers: 8400, verifiedFollowers: 561 },
         "2026-07": { impressions: 42863, engagementRate: 1.71, engagements: 731, profileVisits: 242, replies: 7, likes: 429, reposts: 40, bookmarks: 10, shares: 3, followers: 8400, verifiedFollowers: 561 },
-        "2026-08": { impressions: 9060, engagementRate: 0.22, engagements: 20, profileVisits: 10, replies: 0, likes: 7, reposts: 0, bookmarks: 3, shares: 0, followers: 8400, verifiedFollowers: 561 }
+        "2026-08": { impressions: 9060, engagementRate: 0.22, engagements: 20, profileVisits: 10, replies: 0, likes: 7, reposts: 0, bookmarks: 3, shares: 0, followers: 8400, verifiedFollowers: 561 },
+        "2026-09": { impressions: 4462, engagementRate: 0.34, engagements: 15, profileVisits: 9, replies: 1, likes: 5, reposts: 0, bookmarks: 0, shares: 0, followers: 8400, verifiedFollowers: 568 }
       },
       period: {
         label: "Last 12 months",
@@ -76,7 +78,8 @@ window.OMIT_METRICS = {
         "2026-05": { impressions: 3851, engagementRate: 0.36, engagements: 14, profileVisits: 10, replies: 0, likes: 3, reposts: 0, bookmarks: 1, shares: 0, followers: 856, verifiedFollowers: 104 },
         "2026-06": { impressions: 1648, engagementRate: 0.42, engagements: 7, profileVisits: 5, replies: 0, likes: 1, reposts: 0, bookmarks: 1, shares: 0, followers: 856, verifiedFollowers: 104 },
         "2026-07": { impressions: 1305, engagementRate: 0.54, engagements: 7, profileVisits: 5, replies: 0, likes: 2, reposts: 0, bookmarks: 0, shares: 0, followers: 856, verifiedFollowers: 104 },
-        "2026-08": { impressions: 1348, engagementRate: 0.37, engagements: 5, profileVisits: 3, replies: 0, likes: 2, reposts: 0, bookmarks: 0, shares: 0, followers: 856, verifiedFollowers: 104 }
+        "2026-08": { impressions: 1348, engagementRate: 0.37, engagements: 5, profileVisits: 3, replies: 0, likes: 2, reposts: 0, bookmarks: 0, shares: 0, followers: 856, verifiedFollowers: 104 },
+        "2026-09": { impressions: 874, engagementRate: 0.23, engagements: 2, profileVisits: 1, replies: 0, likes: 1, reposts: 0, bookmarks: 0, shares: 0, followers: 854, verifiedFollowers: 104 }
       },
       period: {
         label: "Year to date",
@@ -104,7 +107,8 @@ window.OMIT_METRICS = {
         "2026-05": { impressions: 57867, engagementRate: 1.57, engagements: 906, profileVisits: 613, replies: 8, likes: 247, reposts: 28, bookmarks: 9, shares: 1, followers: 541, verifiedFollowers: 64 },
         "2026-06": { impressions: 8721, engagementRate: 0.78, engagements: 68, profileVisits: 46, replies: 1, likes: 21, reposts: 0, bookmarks: 0, shares: 0, followers: 541, verifiedFollowers: 64 },
         "2026-07": { impressions: 3960, engagementRate: 0.38, engagements: 15, profileVisits: 13, replies: 0, likes: 2, reposts: 0, bookmarks: 0, shares: 0, followers: 541, verifiedFollowers: 64 },
-        "2026-08": { impressions: 1211, engagementRate: 0.33, engagements: 4, profileVisits: 4, replies: 0, likes: 0, reposts: 0, bookmarks: 0, shares: 0, followers: 541, verifiedFollowers: 64 }
+        "2026-08": { impressions: 1211, engagementRate: 0.33, engagements: 4, profileVisits: 4, replies: 0, likes: 0, reposts: 0, bookmarks: 0, shares: 0, followers: 541, verifiedFollowers: 64 },
+        "2026-09": { impressions: 451, engagementRate: 1.33, engagements: 6, profileVisits: 6, replies: 0, likes: 0, reposts: 0, bookmarks: 0, shares: 0, followers: 542, verifiedFollowers: 66 }
       }
     },
     {
@@ -124,7 +128,8 @@ window.OMIT_METRICS = {
         "2026-05": { impressions: 3100000, engagementRate: 4.2, newFollows: 2981, replies: 1015, likes: 34200, reposts: 556 },
         "2026-06": { impressions: 1900000, engagementRate: 4.7, newFollows: 2007, replies: 752, likes: 19200, reposts: 290 },
         "2026-07": { impressions: 2800000, engagementRate: 4.8, newFollows: 2339, replies: 869, likes: 24700, reposts: 376 },
-        "2026-08": { impressions: 3700000, engagementRate: 3.5, newFollows: 1626, replies: 921, likes: 39100, reposts: 772 }
+        "2026-08": { impressions: 3700000, engagementRate: 3.5, newFollows: 1626, replies: 921, likes: 39100, reposts: 772 },
+        "2026-09": { impressions: 1300000, engagementRate: 4.1, newFollows: 1081, replies: 499, likes: 9856, reposts: 181 }
       }
     },
     {
@@ -179,7 +184,8 @@ window.OMIT_METRICS = {
         "2026-05": { views: 54303, watchTimeHours: 1151.5, subscribersGained: 440, posts: 29, likes: 1298, comments: 81, shares: 40, ctr: 4.5 },
         "2026-06": { views: 25609, watchTimeHours: 1230.1, subscribersGained: 124, posts: 10, likes: 740, comments: 39, shares: 15, ctr: 4.9 },
         "2026-07": { views: 13423, watchTimeHours: 292.5, subscribersGained: 59, posts: 15, likes: 275, comments: 18, shares: 13, ctr: 6.6 },
-        "2026-08": { views: 12484, watchTimeHours: 517.2, subscribersGained: 67, posts: 6, likes: 368, comments: 22, shares: 18, ctr: 4.6 }
+        "2026-08": { views: 12484, watchTimeHours: 517.2, subscribersGained: 67, posts: 6, likes: 368, comments: 22, shares: 18, ctr: 4.6 },
+        "2026-09": { views: 4889, watchTimeHours: 67.2, subscribersGained: 8, posts: 1, likes: 49, comments: 1, shares: 6, ctr: 7.6 }
       }
     }
   ]
