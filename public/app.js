@@ -311,6 +311,7 @@
   /**
    * opts: { labels: [monthKey], series: [{name, color, values}], range, fmt, metricName, onSelect(key, extend) }
    * More than one series renders stacked. Months inside `range` are full strength, others dimmed.
+   * A series with `outsideTotal` stacks on top but is left out of the "Total" row.
    */
   function columnChart(el, opts) {
     clear(el);
@@ -318,12 +319,18 @@
     var height = width < 500 ? 190 : 230;
     var n = opts.labels.length;
     var inRange = function (key) { return key >= opts.range.start && key <= opts.range.end; };
-    var totals = opts.labels.map(function (_, i) {
+    var sumAt = function (i, all) {
       var any = false;
-      var sum = opts.series.reduce(function (acc, sr) { if (sr.values[i] != null) any = true; return acc + (sr.values[i] || 0); }, 0);
+      var sum = opts.series.reduce(function (acc, sr) {
+        if (sr.outsideTotal && !all) return acc;
+        if (sr.values[i] != null) any = true;
+        return acc + (sr.values[i] || 0);
+      }, 0);
       return any ? sum : null;
-    });
-    var max = Math.max.apply(null, totals.map(function (v) { return v || 0; }).concat([0]));
+    };
+    var totals = opts.labels.map(function (_, i) { return sumAt(i, false); });
+    var stacks = opts.labels.map(function (_, i) { return sumAt(i, true); });
+    var max = Math.max.apply(null, stacks.map(function (v) { return v || 0; }).concat([0]));
     var step = max > 0 ? niceStep(max, 4) : 1;
     var yMax = Math.max(step, Math.ceil(max / step) * step);
     var ticks = [];
@@ -395,17 +402,17 @@
       }
 
       if (single && totals[i] != null) {
-        var vl = s("text", { class: "value-label", x: cx, y: y(totals[i]) - 7, "text-anchor": "middle" });
+        var vl = s("text", { class: "value-label", x: cx, y: y(stacks[i]) - 7, "text-anchor": "middle" });
         vl.textContent = tickText(totals[i]);
         svg.appendChild(vl);
       }
 
       var rows = function () {
-        var list = opts.series.map(function (sr) {
-          return { color: sr.color, value: fmtValue(sr.values[i], opts.fmt), name: sr.name };
-        });
-        if (opts.series.length > 1) list.push({ color: "--text-muted", value: fmtValue(totals[i], opts.fmt), name: "Total" });
-        return list;
+        var inTotal = opts.series.filter(function (sr) { return !sr.outsideTotal; });
+        var row = function (sr) { return { color: sr.color, value: fmtValue(sr.values[i], opts.fmt), name: sr.name }; };
+        var list = inTotal.map(row);
+        if (inTotal.length > 1) list.push({ color: "--text-muted", value: fmtValue(totals[i], opts.fmt), name: "Total" });
+        return list.concat(opts.series.filter(function (sr) { return sr.outsideTotal; }).map(row));
       };
       var hit = s("rect", { class: "hit", x: m.left + band * i, y: m.top - 16, width: band, height: plotH + 16, tabindex: "0", role: "button",
         "aria-label": monthLong(key) + ": " + fmtValue(totals[i], opts.fmt) + " " + (opts.metricName || "") });
@@ -541,6 +548,15 @@
       };
     });
 
+    // Affiliates stack on top in their own color but stay out of the org total.
+    var orgSeries = series.slice();
+    visibleChannels().filter(function (c) { return isAffiliate(c) && hasData(c); }).forEach(function (c) {
+      series.push({
+        name: "X Affiliates", color: AFFILIATES.color, outsideTotal: true,
+        values: windowMonths.map(function (mk) { var m = c.months[mk]; return m && m.impressions != null ? m.impressions : null; })
+      });
+    });
+
     var legend = document.getElementById("overview-legend");
     clear(legend);
     if (series.length > 1) series.forEach(function (sr) { legend.appendChild(h("span", { class: "legend-item" }, [swatch(sr.color), sr.name])); });
@@ -554,12 +570,14 @@
 
     var tableEl = document.getElementById("overview-table");
     clear(tableEl);
-    tableEl.appendChild(tableView(["Month"].concat(series.map(function (sr) { return sr.name; }), series.length > 1 ? ["Total"] : []),
+    var extraSeries = series.slice(orgSeries.length);
+    tableEl.appendChild(tableView(["Month"].concat(orgSeries.map(function (sr) { return sr.name; }), orgSeries.length > 1 ? ["Total"] : [],
+      extraSeries.map(function (sr) { return sr.name; })),
       windowMonths.map(function (mk, i) {
-        var vals = series.map(function (sr) { return sr.values[i]; });
+        var vals = orgSeries.map(function (sr) { return sr.values[i]; });
         var row = [monthMid(mk)].concat(vals.map(function (v) { return fmtFull(v); }));
-        if (series.length > 1) row.push(fmtFull(vals.reduce(function (a, b) { return a + (b || 0); }, 0)));
-        return row;
+        if (orgSeries.length > 1) row.push(fmtFull(vals.reduce(function (a, b) { return a + (b || 0); }, 0)));
+        return row.concat(extraSeries.map(function (sr) { return fmtFull(sr.values[i]); }));
       })));
   }
 
