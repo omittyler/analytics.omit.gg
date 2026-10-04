@@ -144,7 +144,8 @@ window.OMIT_METRICS = {
         "2026-05": { posts: 14, reactions: 516, comments: 6, engagementRate: 5.99, views: 14500, shares: 64, saves: 26, followsFromPosts: 0, reach: 10500, watchTimeMin: 1904, avgWatchTimeSec: 10.15 },
         "2026-06": { posts: 10, reactions: 992, comments: 4, engagementRate: 6.64, views: 25700, shares: 7, saves: 14, followsFromPosts: 37, reach: 15600, watchTimeMin: 302.77, avgWatchTimeSec: 8.14 },
         "2026-07": { followers: 30200, followerChange: 12, posts: 19, reactions: 1100, comments: 21, engagementRate: 7.18, views: 32100, shares: 72, saves: 34, followsFromPosts: 38, reach: 17600, watchTimeMin: 898.18, avgWatchTimeSec: 7.74 },
-        "2026-08": { followers: 30200, followerChange: 56, posts: 7, reactions: 302, comments: 5, engagementRate: 9.3, views: 5600, shares: 35, saves: 30, followsFromPosts: 0, reach: 4100, watchTimeMin: 740.86, avgWatchTimeSec: 8.96 }
+        "2026-08": { followers: 30200, followerChange: 56, posts: 7, reactions: 302, comments: 5, engagementRate: 9.3, views: 5600, shares: 35, saves: 30, followsFromPosts: 0, reach: 4100, watchTimeMin: 740.86, avgWatchTimeSec: 8.96 },
+        "2026-09": { followers: 30200, followerChange: -15, posts: 3, reactions: 44, comments: 0, engagementRate: 6.49, views: 1100, shares: 1, saves: 3, followsFromPosts: 0, reach: 847, watchTimeMin: 74.11, avgWatchTimeSec: 5.65 }
       },
       period: {
         label: "Year to date",
@@ -163,7 +164,8 @@ window.OMIT_METRICS = {
         "2026-05": { posts: 0, reactions: 0, comments: 0, engagementRate: 0, views: 0, shares: 0, reach: 0, watchTimeMin: 0, avgWatchTimeSec: 0 },
         "2026-06": { posts: 0, reactions: 0, comments: 0, engagementRate: 0, views: 0, shares: 0, reach: 0, watchTimeMin: 0, avgWatchTimeSec: 0 },
         "2026-07": { followers: 106200, followerChange: 36, posts: 17, reactions: 8700, comments: 154, engagementRate: 4.89, views: 193600, shares: 621, reach: 161000, watchTimeMin: 38400, avgWatchTimeSec: 10.41 },
-        "2026-08": { followers: 106100, followerChange: -152, posts: 8, reactions: 1900, comments: 56, engagementRate: 4.57, views: 43900, shares: 92, reach: 37000, watchTimeMin: 9900, avgWatchTimeSec: 12.11 }
+        "2026-08": { followers: 106100, followerChange: -152, posts: 8, reactions: 1900, comments: 56, engagementRate: 4.57, views: 43900, shares: 92, reach: 37000, watchTimeMin: 9900, avgWatchTimeSec: 12.11 },
+        "2026-09": { followers: 105800, followerChange: -248, posts: 3, reactions: 289, comments: 12, engagementRate: 6.92, views: 4700, shares: 22, reach: 2700, watchTimeMin: 986.97, avgWatchTimeSec: 7.77 }
       },
       period: {
         label: "Year to date",
